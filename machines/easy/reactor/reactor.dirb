@@ -1,0 +1,72 @@
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+OUTPUT_FILE: reactor.dirb
+START_TIME: Tue Jun  9 19:25:19 2026
+URL_BASE: http://10.129.22.114:3000/
+WORDLIST_FILES: /home/kali/HTB/tools/wordlists/directory_enumeration/common.txt
+EXTENSIONS_FILE: txt,conf,html,php | 
+(!) FATAL: Error opening words file: txt,conf,html,php
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+OUTPUT_FILE: reactor.dirb
+START_TIME: Tue Jun  9 19:25:45 2026
+URL_BASE: http://10.129.22.114:3000/
+WORDLIST_FILES: /home/kali/HTB/tools/wordlists/directory_enumeration/common.txt
+EXTENSIONS_FILE: .txt,.conf,.html,.php | 
+(!) FATAL: Error opening words file: .txt,.conf,.html,.php
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+OUTPUT_FILE: reactor.dirb
+START_TIME: Tue Jun  9 19:26:15 2026
+URL_BASE: http://10.129.22.114:3000/
+WORDLIST_FILES: /home/kali/HTB/tools/wordlists/directory_enumeration/common.txt
+EXTENSIONS_FILE: .txt,.conf,.html,.php | 
+(!) FATAL: Error opening words file: .txt,.conf,.html,.php
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+OUTPUT_FILE: reactor.dirb
+START_TIME: Tue Jun  9 19:26:28 2026
+URL_BASE: http://10.129.22.114:3000/
+WORDLIST_FILES: /home/kali/HTB/tools/wordlists/directory_enumeration/DirBuster-2007_directory-list-2.3-medium.txt
+EXTENSIONS_FILE: txt,conf,html,php | 
+(!) FATAL: Error opening words file: txt,conf,html,php
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+OUTPUT_FILE: reactor.dirb
+START_TIME: Tue Jun  9 19:26:52 2026
+URL_BASE: http://10.129.22.114:3000/
+WORDLIST_FILES: /home/kali/HTB/tools/wordlists/big.txt
+EXTENSIONS_FILE: txt,conf,html,php | 
+(!) FATAL: Error opening words file: txt,conf,html,php
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+OUTPUT_FILE: reactor.dirb
+START_TIME: Tue Jun  9 19:26:59 2026
+URL_BASE: http://10.129.22.114:3000/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+EXTENSIONS_FILE: txt,conf,html,php | 
+(!) FATAL: Error opening words file: txt,conf,html,php

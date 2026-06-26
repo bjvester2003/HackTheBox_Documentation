@@ -1,0 +1,29 @@
+Machine : 
+Difficulty :
+OS : 
+
+User Flag :
+Root Flag :
+
+ADDRESS : 
+URL : 
+
+Guide :
+_______________________________________________________________________________________________________________ 
+
+#Technology
+
+#Ports
+
+#Vulnerabilities
+
+#Stuff
+
+#Creadentials
+
+#Commands
+
+#Artifacts
+
+#Process
+1.

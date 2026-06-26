@@ -1,0 +1,38 @@
+Machine : Reactor
+Difficulty : easy
+OS : linux
+
+User Flag :
+Root Flag :
+
+ADDRESS : 10.129.22.114
+URL : http://10.129.22.114:3000/
+
+Guide :
+_______________________________________________________________________________________________________________ 
+
+#Technology
+openssh 9.6p1
+ubuntu 13.16
+
+#Ports
+22 : ssh
+3000 : ppp?
+
+#Vulnerabilities
+
+#Stuff
+
+#Creadentials
+
+#Commands
+
+#Artifacts
+
+#People
+1. Dr. Elena Rodriguez | Lead Nuclear Engineer
+2. Marcus Kim | Senior Technician
+3. James Thompson | Safety Officer
+
+#Process
+1.

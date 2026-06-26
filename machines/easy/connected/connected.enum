@@ -1,0 +1,114 @@
+
+[0;36m[1m━━━ System Information ━━━[0m
+[0;32mKernel & Architecture:[0m
+Linux connected 5.4.239-1.el7.elrepo.x86_64 #1 SMP Thu Mar 30 10:40:27 EDT 2023 x86_64 x86_64 x86_64 GNU/Linux
+[0;32mHostname:[0m
+connected
+[0;32mOS Release:[0m
+NAME="Sangoma Linux"
+VERSION="7 (Core)"
+ID="sangoma"
+ID_LIKE="centos rhel fedora"
+VERSION_ID="7"
+PRETTY_NAME="Sangoma Linux 7 (Core)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:sangoma:sng:7::server:utf8"
+HOME_URL="https://distro.sangoma.net/"
+BUG_REPORT_URL="https://issues.sangoma.net/"
+
+CENTOS_MANTISBT_PROJECT="Sangoma-7"
+CENTOS_MANTISBT_PROJECT_VERSION="7"
+REDHAT_SUPPORT_PRODUCT="sangoma"
+REDHAT_SUPPORT_PRODUCT_VERSION="7"
+
+[0;32mCPU Info:[0m
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                2
+On-line CPU(s) list:   0,1
+Thread(s) per core:    1
+Core(s) per socket:    2
+Socket(s):             1
+NUMA node(s):          1
+Vendor ID:             AuthenticAMD
+CPU family:            25
+Model:                 1
+Model name:            AMD EPYC 7763 64-Core Processor
+Stepping:              1
+CPU MHz:               2445.405
+BogoMIPS:              4890.81
+Hypervisor vendor:     VMware
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              512K
+L3 cache:              32768K
+NUMA node0 CPU(s):     0,1
+Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl tsc_reliable nonstop_tsc cpuid extd_apicid pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext invpcid_single ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero wbnoinvd arat umip pku ospke vaes vpclmulqdq rdpid overflow_recov succor
+[0;32mMemory:[0m
+              total        used        free      shared  buff/cache   available
+Mem:           3.8G        578M        2.7G        9.4M        575M        3.0G
+Swap:          1.0G          0B        1.0G
+[0;32mLogged-in Users:[0m
+ 20:49:37 up  1:45,  2 users,  load average: 0.09, 0.11, 0.09
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+asterisk pts/0                     20:45    1.00s  0.03s  0.00s w
+
+[0;36m[1m━━━ Permissions & Ownership ━━━[0m
+[0;32mCurrent User:[0m
+asterisk
+[0;32mUser & Group IDs:[0m
+uid=999(asterisk) gid=1000(asterisk) groups=1000(asterisk)
+[0;32mSudo Privileges:[0m
+[0;32mCurrent Dir Listing:[0m
+total 28
+drwxr-xr-x. 10 asterisk asterisk 274 Jun  4 11:23 .
+drwxr-xr-x.  3 root     root      22 May 21 07:50 ..
+-rw-------   1 asterisk asterisk  13 Jun  4 11:24 .asterisk_history
+-rw-------   1 asterisk asterisk  44 Jun  9 20:44 .bash_history
+-rw-r--r--.  1 asterisk asterisk  18 Dec  6  2016 .bash_logout
+-rw-r--r--.  1 asterisk asterisk 193 Dec  6  2016 .bash_profile
+-rw-r--r--.  1 asterisk asterisk 231 Dec  6  2016 .bashrc
+drwxrwxr-x   3 asterisk asterisk  18 Jun  4 11:23 .cache
+drwxr-xr-x.  4 asterisk asterisk  37 Jun  4 11:23 .config
+drwxrwxr-x.  2 asterisk asterisk  83 Nov 30  2025 .gnupg
+drwxr-xr-x.  4 asterisk asterisk  28 Nov 30  2025 .node
+drwxr-xr-x.  3 asterisk asterisk  20 Nov 30  2025 .node-gyp
+drwxr-xr-x.  5 asterisk asterisk  86 Nov 30  2025 .npm
+-rw-r--r--.  1 asterisk asterisk  18 Nov 30  2025 .npmrc
+-rw-r--r--   1 asterisk asterisk   0 May 19 18:41 .odbc.ini
+drwxr-xr-x.  3 asterisk asterisk  17 Nov 30  2025 .package_cache
+drwxrwxr-x.  5 asterisk asterisk 165 Nov 30  2025 .pm2
+-rw-r-----   1 root     asterisk  33 Jun  9 19:05 user.txt
+[0;32m/tmp Permissions:[0m
+drwxrwxrwt 2 root root 6 Jun  9 20:46 /tmp
+
+[0;36m[1m━━━ SUID Binaries ━━━[0m
+[0;32mSearching for SUID files (this may take a moment)...[0m
+/usr/bin/fusermount
+/usr/bin/passwd
+/usr/bin/sudo
+/usr/bin/chfn
+/usr/bin/chsh
+/usr/bin/mount
+/usr/bin/chage
+/usr/bin/gpasswd
+/usr/bin/newgrp
+/usr/bin/su
+/usr/bin/umount
+/usr/bin/pkexec
+/usr/bin/crontab
+/usr/bin/incrontab
+/usr/bin/at
+/usr/bin/staprun
+/usr/sbin/pam_timestamp_check
+/usr/sbin/unix_chkpwd
+/usr/sbin/usernetctl
+/usr/sbin/userhelper
+/usr/lib/polkit-1/polkit-agent-helper-1
+/usr/libexec/dbus-1/dbus-daemon-launch-helper
+/usr/libexec/abrt-action-install-debuginfo-to-abrt-cache
+
+[0;36m[1m━━━ Done ━━━[0m
+
